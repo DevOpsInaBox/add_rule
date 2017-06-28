@@ -5,6 +5,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 import gzip
 import sys
+import pprint
 
 pa_ip = "192.168.1.1"
 pa_key = "LUFRPT1keWtzMHlBeHJYZnZGWjdHNUJOMCtaVWNHQ0U9eEd5R3RZZldhZjJMY0h1WlRqSFk2Zz09"
@@ -59,4 +60,7 @@ if len(rule_list) == 1:
 
 for i in range(1,len(rule_list)):
      results = paloalto_rule_getdetails(pa_ip,pa_key,rule_list[i])
-     print("Details of Rule "+rule_list[i]+":"+str(results))
+     pp = pprint.PrettyPrinter(indent=4)
+     print("Details of Rule "+rule_list[i]+":")
+     pp.pprint(results)
+     #print("Details of Rule "+rule_list[i]+":"+str(results))
