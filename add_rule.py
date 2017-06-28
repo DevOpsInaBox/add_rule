@@ -1,7 +1,8 @@
 import json
 import ssl
 import urllib
-import urllib.request
+from urllib2 import urlopen
+#import urllib.request
 import xml.etree.ElementTree as ET
 import gzip
 import sys
